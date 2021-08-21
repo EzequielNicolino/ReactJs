@@ -8,7 +8,7 @@ function App() {
     <div>
 
       <NavBar/>
-      <ItemListContainer msg="Serivicio Técnico"/>
+      <ItemListContainer msg="Servicio Técnico"/>
       
 
     </div>
