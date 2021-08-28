@@ -8,7 +8,7 @@ export const ItemList = ( { productos } ) => {
     return(
         <section>
 
-            <div>
+            <div className="productContainer">
 
                 {productos.map((prod) => <Item key={prod.id} item={prod}/>)}
 

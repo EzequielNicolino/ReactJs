@@ -7,7 +7,7 @@ export const CartWidget = () => {
         
         <div>
 
-            <img src="https://i.ibb.co/yRmmch4/cart.png"/>
+            <img className="cartLogo" src="https://i.ibb.co/yRmmch4/cart.png"/>
 
         </div>
 

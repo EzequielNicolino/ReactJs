@@ -1,6 +1,7 @@
 import { directive } from '@babel/types'
 import React from 'react'
 import { CartWidget } from '../CartWidget/CartWidget'
+import {Link} from 'react-router-dom'
 
 export const NavBar = () => {
 
@@ -9,20 +10,20 @@ export const NavBar = () => {
 
         <header className="header">
 
-            <img src="https://i.ibb.co/59cF2sJ/N2.png"/>
+            <Link to={"/"}><img className="logo" src="https://i.ibb.co/59cF2sJ/N2.png"/></Link>
+
+            <CartWidget/>
 
             <nav>
 
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Sobre Nosotros</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><Link to={"/"}>Home</Link></li>
+                    <li><Link to={"/servicios"}>Servicios</Link></li>
+                    <li><Link to={"/sobreNosotros"}>Sobre Nosotros</Link></li>
+                    <li><Link to={"/contacto"}>Contacto</Link></li>
                 </ul>
-                
-            </nav>
 
-            <CartWidget/>
+            </nav>
 
         </header>
     )
