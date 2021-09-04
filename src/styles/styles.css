@@ -1,162 +1,259 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
- 
-    
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color: rgb(199, 192, 192);
+body {
+  background-color: rgb(199, 192, 192);
 }
 
-.header{
-    top: 0;
-	z-index: 1;
-	font-size: 20px;
-	position: fixed;
-	width: 100%;
-	box-shadow: 0 5px 5px rgb(0, 0, 0);
-    text-align: center;
-    display: inline;
-    background-color: rgb(0, 0, 0);
+li {
+  list-style: none;
 }
 
-nav ul{
-    margin-top: 18px;
+.header {
+  top: 0;
+  z-index: 1;
+  font-size: 20px;
+  position: fixed;
+  width: 100%;
+  box-shadow: 0 5px 5px rgb(0, 0, 0);
+  text-align: center;
+  display: inline;
+  background-color: rgb(0, 0, 0);
 }
 
-nav ul li{
-    display: inline;
-    padding: 0px 10px 0px 10px;
+nav ul {
+  margin-top: 18px;
 }
 
-a{
-    text-decoration: none;
-    color: white;
+nav ul li {
+  display: inline;
+  padding: 0px 10px 0px 10px;
 }
 
-.message{
-    margin-top: 60px;
-    text-align: center;
-    font-size: 30px;
+a {
+  text-decoration: none;
+  color: white;
 }
 
-.logo{
-    float: left;
-    margin-left: 5%;
+.message {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 30px;
 }
 
-.cartLogo{
-    float: right;
-    margin-right: 5%;
+.logo {
+  float: left;
+  margin-left: 5%;
 }
 
-.services{
-    margin-top: 60px;
+.cartContainer {
+  float: right;
+  margin-right: 5%;
 }
 
-.aboutUs{
-    margin-top: 60px;
+.cartLogoContainer li {
+  display: inline;
 }
 
-.contact{
-    margin-top: 60px;
+.cartLogoContainer li span {
+  margin-bottom: 5px;
 }
 
-.errorPage{
-    margin-top: 60px;
-}
-.loading{
-    margin-top: 60px;
+.services {
+  margin-top: 60px;
 }
 
-.productButton{
-    color: white;
-    padding: 1.5px 3px 1.5px 3px;
-    background-color: red;
-    border-style: solid;
-    border-color: black;
-    border-radius: 5px;
+.aboutUs {
+  margin-top: 60px;
 }
 
-.productNav{
-    margin-bottom: 10px;
+.contact {
+  margin-top: 60px;
 }
 
-.productNav li{
-    display: inline;
-    padding: 0px 10px 0px 10px;
-    font-size: 20px;
-   
+.errorPage {
+  margin-top: 60px;
+}
+.loading {
+  margin-top: 60px;
+}
+
+.productButton {
+  color: white;
+  padding: 1.5px 3px 1.5px 3px;
+  background-color: red;
+  border-style: solid;
+  border-color: black;
+  border-radius: 5px;
+}
+
+.productNav {
+  margin-bottom: 10px;
+}
+
+.productNav li {
+  display: inline;
+  padding: 0px 10px 0px 10px;
+  font-size: 20px;
 }
 
 .productNav a {
-    color: white;
-    padding: 1.5px 3px 1.5px 3px;
-    background-color: red;
-    border-style: solid;
-    border-color: black;
-    border-radius: 5px;
+  color: white;
+  padding: 1.5px 3px 1.5px 3px;
+  background-color: red;
+  border-style: solid;
+  border-color: black;
+  border-radius: 5px;
 }
 
-.productHomeImg{
-    border-style: solid;
-    border-color: black;
-    border-radius: 5px;
+.productHomeImg {
+  border-style: solid;
+  border-color: black;
+  border-radius: 5px;
 }
 
-.productList{
-    margin-bottom: 20px;
+.productList {
+  margin-bottom: 20px;
 }
 
-.productContainer{
-    display: grid;
-	grid-template-areas: 
-		"c1 c2 c3"
-		"c3 c4 c5"
-		"c5 c6 .";
-	grid-template-columns: auto auto auto;
-	grid-template-rows: auto auto auto;
+.productContainer {
+  display: grid;
+  grid-template-areas:
+    "c1 c2 c3"
+    "c3 c4 c5"
+    "c5 c6 .";
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
 }
 
-.productDetail{
-    margin-top: 60px;
-    display: grid;
-    grid-template-areas: 
-		"a1 a1"
-		"a3 a2"
-		"a3 a4";
-	grid-template-columns: auto auto;
-	grid-template-rows: auto auto auto;
+.productDetail {
+  margin-top: 60px;
+  display: grid;
+  grid-template-areas:
+    "a1 a1"
+    "a3 a2"
+    "a3 a4";
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto;
 }
 
-.productDetailName{
-    grid-area: a1;
-	justify-self: center;
-    font-size: 50px;
-    margin-bottom: 50px;
+.productDetailName {
+  grid-area: a1;
+  justify-self: center;
+  font-size: 50px;
+  margin-bottom: 50px;
 }
 
-.productDetailPrice{
-    grid-area: a2;
-	justify-self: center;
-    font-size: 30px;
+.productDetailPrice {
+  grid-area: a2;
+  justify-self: center;
+  font-size: 30px;
 }
 
-.productDetailImg{
-    grid-area: a3;
-	justify-self: left;
-    margin-left: 25%;
-    border-style: solid;
-    border-color: black;
-    border-radius: 5px;
+.productDetailImg {
+  grid-area: a3;
+  justify-self: left;
+  margin-left: 25%;
+  border-style: solid;
+  border-color: black;
+  border-radius: 5px;
 }
 
-.productDetailDesc{
-    grid-area: a4;
-	justify-self: center;
-    text-align: center;
-    font-size: 20px;
-    width: 50%;
+.productDetailDesc {
+  grid-area: a4;
+  justify-self: center;
+  text-align: center;
+  font-size: 20px;
+  width: 50%;
+}
+
+.cartNumber {
+  color: white;
+  margin-left: 10px;
+}
+
+.cartPage {
+  margin-top: 60px;
+}
+
+.cartDisplay {
+  margin-top: 70px;
+}
+
+.addToCart li {
+  display: inline-block;
+  margin-left: 72px;
+}
+
+.cartMinus {
+  background-color: red;
+  color: white;
+  padding: 5px 10px 5px 5px;
+  border-radius: 2px;
+  border-style: solid;
+  border-color: black;
+  font-size: 15px;
+}
+
+.cartPlus {
+  background-color: red;
+  color: white;
+  padding: 5px 5px 5px 5px;
+  border-radius: 2px;
+  border-style: solid;
+  border-color: black;
+  font-size: 15px;
+}
+
+.addProduct {
+  background-color: gray;
+  color: white;
+  padding: 5px 5px 5px 5px;
+  border-radius: 2px;
+  border-style: solid;
+  border-color: black;
+  font-size: 15px;
+  margin-left: 108px;
+}
+
+.endPurchase {
+  background-color: gray;
+  color: white;
+  padding: 5px 5px 5px 5px;
+  border-radius: 2px;
+  border-style: solid;
+  border-color: black;
+  font-size: 15px;
+  margin-left: 95px;
+}
+
+.finalCart {
+  padding: 15px 15px 15px 15px;
+  background-color: gray;
+  color: white;
+  margin-right: 75%;
+  border-style: solid;
+  border-color: black;
+  border-radius: 5px;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.finalCart li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.emptyCart {
+  margin-left: 10%;
+  background-color: red;
+  color: white;
+  border-style: solid;
+  border-color: black;
+  border-radius: 2px;
+  font-size: 15px;
+  padding: 5px 5px 5px 5px;
 }
