@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { UIContext } from "../../context/UIContext";
-import { requestData } from "../../helpers/requestData";
+import { getFireStore } from "../../firebase/firebase";
 import { ItemDetail } from "./ItemDetail";
 
 export const ItemDetailContainer = () => {
@@ -14,9 +14,16 @@ export const ItemDetailContainer = () => {
   useEffect(() => {
     setLoading(true);
 
-    requestData()
-      .then((res) => {
-        setItem(res.find((prod) => prod.id === parseInt(itemId)));
+    const db = getFireStore();
+
+    const productos = db.collection("productos");
+
+    const item = productos.doc(itemId);
+
+    item
+      .get()
+      .then((doc) => {
+        setItem({ ...doc.data(), id: doc.id });
       })
       .finally(() => {
         setLoading(false);
