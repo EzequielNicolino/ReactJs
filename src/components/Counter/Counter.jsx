@@ -21,14 +21,14 @@ export const Counter = ({ max, quantity, setQuantity, add, added }) => {
           <button className="endPurchase">Terminar Compra</button>
         </Link>
       ) : (
-        <div>
+        <div className="cartControls">
           <ul className="addToCart">
             <li>
               <button className="cartMinus" onClick={handleSubtract}>
-                -
+                ‎‎‏‏‎ ‎-
               </button>
             </li>
-            <li>
+            <li className="addProductNumber">
               <p>{quantity}</p>
             </li>
             <li>

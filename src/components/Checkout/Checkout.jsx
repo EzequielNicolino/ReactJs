@@ -39,10 +39,10 @@ export const Checkout = () => {
           emptyCart();
         })
         .catch((err) => {
-            Swal.fire({
-                icon: "error",
-                title: "Productos sin Stock",
-              });
+          Swal.fire({
+            icon: "error",
+            title: "Productos sin Stock",
+          });
         });
     } else {
       Swal.fire({
@@ -58,8 +58,11 @@ export const Checkout = () => {
       {!cart.length ? (
         <Redirect to="/" />
       ) : (
-        <div>
-          <form onSubmit={handleSubmit}>
+        <div className="formContainer">
+          <form className="checkOutForm" onSubmit={handleSubmit}>
+            <br />
+            <label className="nameLabel">Nombre Completo</label>
+            <br />
 
             <input
               type="text"
@@ -67,7 +70,13 @@ export const Checkout = () => {
               onChange={handleInputChange}
               name="name"
               required
+              className="fullNameInput"
+              placeholder="Nombre Completo"
             />
+            <br />
+
+            <label className="phoneLabel">Telefono</label>
+            <br />
 
             <input
               type="tel"
@@ -75,7 +84,13 @@ export const Checkout = () => {
               onChange={handleInputChange}
               name="tel"
               required
+              className="phoneInput"
+              placeholder="+549..."
             />
+            <br />
+
+            <label className="mailLabel">Email</label>
+            <br />
 
             <input
               type="email"
@@ -83,9 +98,13 @@ export const Checkout = () => {
               onChange={handleInputChange}
               name="email"
               required
+              className="emailInput"
+              placeholder="tuemail@mail.com"
             />
-
-            <button type="submit">Finalizar</button>
+            <br />
+            <button className="sendButton" type="submit">
+              Finalizar
+            </button>
           </form>
         </div>
       )}

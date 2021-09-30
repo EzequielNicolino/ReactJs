@@ -67,7 +67,17 @@ export const ItemListContainer = ({ msg }) => {
         </li>
       </ul>
 
-      {loading ? <h2>Cargando...</h2> : <ItemList products={data} />}
+      {loading ? (
+        <div className="loading">
+          <img
+            src="https://i.ibb.co/9gZhPv0/Top-30-Barik-GIFs-Find-the-best-GIF-on-Gfycat.gif"
+            alt="loading"
+          />
+          <h2>Cargando...</h2>
+        </div>
+      ) : (
+        <ItemList products={data} />
+      )}
     </div>
   );
 };

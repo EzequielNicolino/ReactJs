@@ -30,15 +30,15 @@ function App() {
               </Route>
 
               <Route exact path="/servicios">
-                <h1 className="services">Servicios</h1>
+                <h1 className="services">Proximamente...</h1>
               </Route>
 
               <Route exact path="/sobreNosotros">
-                <h1 className="aboutUs">About Us</h1>
+                <h1 className="aboutUs">Proximamente...</h1>
               </Route>
 
               <Route exact path="/contacto">
-                <h1 className="contact">Contacto</h1>
+                <h1 className="contact">Proximamente...</h1>
               </Route>
 
               <Route exact path="/cart">

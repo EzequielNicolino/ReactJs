@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { UIContext } from "../../context/UIContext";
 import { getFireStore } from "../../firebase/firebase";
 import { ItemDetail } from "./ItemDetail";
+import { Redirect } from "react-router";
 
 export const ItemDetailContainer = () => {
   const { loading, setLoading } = useContext(UIContext);
@@ -10,6 +11,8 @@ export const ItemDetailContainer = () => {
   const { itemId } = useParams();
 
   const [item, setItem] = useState(null);
+
+  const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -23,7 +26,11 @@ export const ItemDetailContainer = () => {
     item
       .get()
       .then((doc) => {
-        setItem({ ...doc.data(), id: doc.id });
+        if (doc.data() !== undefined) {
+          setItem({ ...doc.data(), id: doc.id });
+        } else {
+          setNotFound(true);
+        }
       })
       .finally(() => {
         setLoading(false);
@@ -32,14 +39,19 @@ export const ItemDetailContainer = () => {
 
   return (
     <div>
-      {loading ? (
+      {loading && (
         <div className="loading">
-          <img src="https://i.ibb.co/QQbB5f0/200.gif" alt="loading" />
-          <h2>Cargando...</h2>
+          <img
+            src="https://i.ibb.co/9gZhPv0/Top-30-Barik-GIFs-Find-the-best-GIF-on-Gfycat.gif"
+            alt="loading"
+          />
+          <h2 className="loadingDetail">Cargando...</h2>
         </div>
-      ) : (
-        <ItemDetail {...item} />
       )}
+
+      {!loading && notFound && <Redirect to="/" />}
+
+      {!loading && !notFound && <ItemDetail {...item} />}
     </div>
   );
 };
